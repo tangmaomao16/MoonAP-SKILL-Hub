@@ -1,0 +1,11 @@
+[
+  {
+    "id": "bioinformatics.sequencing.fastq-generator",
+    "name": "fastq-generator",
+    "description": "Generate a synthetic FASTQ file for testing, demos, or sequencing pipeline validation.",
+    "version": "0.1.0",
+    "domain": "bioinformatics",
+    "subdomain": "sequencing",
+    "folder_path": "bioinformatics/sequencing/fastq-generator"
+  }
+]
