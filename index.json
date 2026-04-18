@@ -6,6 +6,7 @@
     "version": "0.1.0",
     "domain": "bioinformatics",
     "subdomain": "sequencing",
-    "folder_path": "bioinformatics/sequencing/fastq-generator"
+    "folder_path": "bioinformatics/sequencing/fastq-generator",
+    "zip_path": "bioinformatics/sequencing/fastq-generator.zip"
   }
 ]
