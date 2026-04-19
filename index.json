@@ -121,5 +121,463 @@
     "result_mode": "report",
     "folder_path": "bioinformatics/sequencing/large-fastq-analyzer2",
     "zip_path": "bioinformatics/sequencing/large-fastq-analyzer2.zip"
+  },
+  {
+    "id": "demo.utilities.celsius-fahrenheit-converter",
+    "name": "Celsius Fahrenheit Converter",
+    "description": "Convert Celsius temperatures to Fahrenheit in the browser.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/celsius-fahrenheit-converter",
+    "zip_path": "demo/utilities/celsius-fahrenheit-converter.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "title": "Convert Celsius to Fahrenheit",
+      "action_label": "Convert temperature",
+      "rerun_action_label": "Convert again",
+      "fields": [
+        {
+          "name": "celsius",
+          "label": "Celsius temperature",
+          "type": "float",
+          "default": 25,
+          "step": 0.1,
+          "help": "Enter the Celsius value to convert."
+        }
+      ],
+      "computed_outputs": [
+        {
+          "name": "fahrenheit",
+          "label": "Fahrenheit temperature",
+          "expression": "celsius * 9 / 5 + 32",
+          "decimals": 2
+        }
+      ],
+      "result_template": "Celsius: {{celsius}}\nFahrenheit: {{fahrenheit}}",
+      "summary_template": "Converted {{celsius}} Celsius to {{fahrenheit}} Fahrenheit."
+    }
+  },
+  {
+    "id": "demo.utilities.minutes-seconds-converter",
+    "name": "Minutes Seconds Converter",
+    "description": "Convert minutes to seconds or seconds to minutes with a browser-local form.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/minutes-seconds-converter",
+    "zip_path": "demo/utilities/minutes-seconds-converter.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "title": "Convert minutes and seconds",
+      "action_label": "Convert time",
+      "rerun_action_label": "Convert again",
+      "fields": [
+        {
+          "name": "minutes",
+          "label": "Minutes",
+          "type": "float",
+          "default": 1,
+          "step": 0.01,
+          "help": "Enter minutes to convert to seconds."
+        },
+        {
+          "name": "seconds",
+          "label": "Seconds",
+          "type": "float",
+          "default": 60,
+          "step": 0.01,
+          "help": "Enter seconds to convert to minutes."
+        }
+      ],
+      "computed_outputs": [
+        {
+          "name": "minutes_to_seconds",
+          "label": "Minutes to Seconds",
+          "expression": "minutes * 60",
+          "decimals": 4
+        },
+        {
+          "name": "seconds_to_minutes",
+          "label": "Seconds to Minutes",
+          "expression": "seconds / (60)",
+          "decimals": 4
+        }
+      ],
+      "result_template": "Minutes: {{minutes}} -> {{minutes_to_seconds}} seconds\nSeconds: {{seconds}} -> {{seconds_to_minutes}} minutes",
+      "summary_template": "Converted minutes and seconds."
+    }
+  },
+  {
+    "id": "demo.utilities.two-number-sum",
+    "name": "Two Number Sum",
+    "description": "Add two numbers locally in the browser.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/two-number-sum",
+    "zip_path": "demo/utilities/two-number-sum.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "title": "Add two numbers",
+      "action_label": "Calculate sum",
+      "rerun_action_label": "Calculate again",
+      "fields": [
+        {
+          "name": "number_a",
+          "label": "First number",
+          "type": "float",
+          "default": 1,
+          "step": 1
+        },
+        {
+          "name": "number_b",
+          "label": "Second number",
+          "type": "float",
+          "default": 2,
+          "step": 1
+        }
+      ],
+      "computed_outputs": [
+        {
+          "name": "sum",
+          "label": "Sum",
+          "expression": "number_a + number_b",
+          "decimals": 4
+        }
+      ],
+      "result_template": "First number: {{number_a}}\nSecond number: {{number_b}}\nSum: {{sum}}",
+      "summary_template": "Calculated sum {{sum}}."
+    }
+  },
+  {
+    "id": "demo.utilities.bmi-calculator",
+    "name": "BMI Calculator",
+    "description": "Calculate body mass index from weight and height.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/bmi-calculator",
+    "zip_path": "demo/utilities/bmi-calculator.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "title": "Calculate BMI",
+      "action_label": "Calculate BMI",
+      "rerun_action_label": "Calculate again",
+      "fields": [
+        {
+          "name": "weight_kg",
+          "label": "Weight in kg",
+          "type": "float",
+          "default": 70,
+          "step": 0.1
+        },
+        {
+          "name": "height_m",
+          "label": "Height in meters",
+          "type": "float",
+          "default": 1.75,
+          "step": 0.01
+        }
+      ],
+      "computed_outputs": [
+        {
+          "name": "bmi",
+          "label": "BMI",
+          "expression": "weight_kg / (height_m * height_m)",
+          "decimals": 2
+        }
+      ],
+      "result_template": "Weight: {{weight_kg}} kg\nHeight: {{height_m}} m\nBMI: {{bmi}}",
+      "summary_template": "Calculated BMI {{bmi}}."
+    }
+  },
+  {
+    "id": "demo.utilities.circle-calculator",
+    "name": "Circle Calculator",
+    "description": "Calculate circle area and circumference from radius.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/circle-calculator",
+    "zip_path": "demo/utilities/circle-calculator.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "title": "Circle measurements",
+      "action_label": "Calculate circle",
+      "rerun_action_label": "Calculate again",
+      "fields": [
+        {
+          "name": "radius",
+          "label": "Radius",
+          "type": "float",
+          "default": 1,
+          "step": 0.01
+        }
+      ],
+      "computed_outputs": [
+        {
+          "name": "area",
+          "label": "Area",
+          "expression": "radius * radius * 3.141592653589793",
+          "decimals": 4
+        },
+        {
+          "name": "circumference",
+          "label": "Circumference",
+          "expression": "2 * 3.141592653589793 * radius",
+          "decimals": 4
+        }
+      ],
+      "result_template": "Radius: {{radius}}\nArea: {{area}}\nCircumference: {{circumference}}",
+      "summary_template": "Calculated circle area {{area}} and circumference {{circumference}}."
+    }
+  },
+  {
+    "id": "demo.utilities.loan-payment-calculator",
+    "name": "Loan Payment Calculator",
+    "description": "Estimate monthly loan payment from principal, interest rate, and month count.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/loan-payment-calculator",
+    "zip_path": "demo/utilities/loan-payment-calculator.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "title": "Loan payment calculator",
+      "action_label": "Calculate payment",
+      "rerun_action_label": "Calculate again",
+      "fields": [
+        {
+          "name": "principal",
+          "label": "Principal",
+          "type": "float",
+          "default": 10000,
+          "step": 100
+        },
+        {
+          "name": "annual_interest_rate",
+          "label": "Annual interest rate (%)",
+          "type": "float",
+          "default": 5,
+          "step": 0.01
+        },
+        {
+          "name": "months",
+          "label": "Months",
+          "type": "int",
+          "default": 36,
+          "min": 1,
+          "step": 1
+        }
+      ],
+      "computed_outputs": [
+        {
+          "name": "monthly_payment",
+          "label": "Monthly payment",
+          "expression": "principal * (annual_interest_rate / 100 / 12) / (1 - pow(1 + annual_interest_rate / 100 / 12, 0 - months))",
+          "decimals": 2
+        },
+        {
+          "name": "total_paid",
+          "label": "Total paid",
+          "expression": "monthly_payment * months",
+          "decimals": 2
+        },
+        {
+          "name": "total_interest",
+          "label": "Total interest",
+          "expression": "total_paid - principal",
+          "decimals": 2
+        }
+      ],
+      "result_template": "Principal: {{principal}}\nAnnual interest rate: {{annual_interest_rate}}%\nMonths: {{months}}\nMonthly payment: {{monthly_payment}}\nTotal paid: {{total_paid}}\nTotal interest: {{total_interest}}",
+      "summary_template": "Monthly payment is {{monthly_payment}}."
+    }
+  },
+  {
+    "id": "demo.utilities.tip-calculator",
+    "name": "Tip Calculator",
+    "description": "Calculate tip, total bill, and per-person amount.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/tip-calculator",
+    "zip_path": "demo/utilities/tip-calculator.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "title": "Tip calculator",
+      "action_label": "Calculate tip",
+      "rerun_action_label": "Calculate again",
+      "fields": [
+        {
+          "name": "bill_amount",
+          "label": "Bill amount",
+          "type": "float",
+          "default": 50,
+          "step": 0.01
+        },
+        {
+          "name": "tip_percent",
+          "label": "Tip percent",
+          "type": "float",
+          "default": 18,
+          "step": 0.1
+        },
+        {
+          "name": "people",
+          "label": "Number of people",
+          "type": "int",
+          "default": 2,
+          "min": 1,
+          "step": 1
+        }
+      ],
+      "computed_outputs": [
+        {
+          "name": "tip_amount",
+          "label": "Tip amount",
+          "expression": "bill_amount * tip_percent / 100",
+          "decimals": 2
+        },
+        {
+          "name": "total_amount",
+          "label": "Total amount",
+          "expression": "bill_amount + tip_amount",
+          "decimals": 2
+        },
+        {
+          "name": "per_person",
+          "label": "Per person",
+          "expression": "total_amount / people",
+          "decimals": 2
+        }
+      ],
+      "result_template": "Bill: {{bill_amount}}\nTip: {{tip_amount}}\nTotal: {{total_amount}}\nPer person: {{per_person}}",
+      "summary_template": "Total is {{total_amount}}, or {{per_person}} per person."
+    }
+  },
+  {
+    "id": "demo.utilities.json-formatter-validator",
+    "name": "JSON Formatter Validator",
+    "description": "Validate and pretty-print JSON text locally in the browser.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/json-formatter-validator",
+    "zip_path": "demo/utilities/json-formatter-validator.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "tool_kind": "json-formatter",
+      "title": "JSON formatter and validator",
+      "action_label": "Format JSON",
+      "rerun_action_label": "Format again",
+      "fields": [
+        {
+          "name": "json_text",
+          "label": "JSON text",
+          "type": "text",
+          "default": "{\"hello\":\"moonap\"}",
+          "help": "Paste JSON text to validate and pretty-print locally."
+        }
+      ]
+    }
+  },
+  {
+    "id": "demo.utilities.text-analyzer",
+    "name": "Text Analyzer",
+    "description": "Count characters, words, lines, and estimated reading time.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "form",
+    "result_mode": "text",
+    "folder_path": "demo/utilities/text-analyzer",
+    "zip_path": "demo/utilities/text-analyzer.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "tool_kind": "text-analysis",
+      "title": "Text analyzer",
+      "action_label": "Analyze text",
+      "rerun_action_label": "Analyze again",
+      "fields": [
+        {
+          "name": "input_text",
+          "label": "Text",
+          "type": "text",
+          "default": "MoonAP runs browser-local WebAssembly tools.",
+          "help": "Enter text to count characters, words, lines, and estimated reading time."
+        }
+      ]
+    }
+  },
+  {
+    "id": "demo.utilities.csv-summary-analyzer",
+    "name": "CSV Summary Analyzer",
+    "description": "Analyze a browser-local CSV or TSV file for rows, columns, missing values, and numeric summaries.",
+    "version": "0.1.0",
+    "domain": "demo",
+    "subdomain": "utilities",
+    "category": "demo",
+    "task_kind": "generic-task",
+    "runtime_mode": "file",
+    "result_mode": "report",
+    "folder_path": "demo/utilities/csv-summary-analyzer",
+    "zip_path": "demo/utilities/csv-summary-analyzer.zip",
+    "runtime_spec": {
+      "mode": "file",
+      "analysis_type": "csv-summary",
+      "title": "CSV analyzer",
+      "action_label": "Analyze CSV",
+      "rerun_action_label": "Analyze CSV again",
+      "result_mode": "report",
+      "io_contract": {
+        "browser_local_only": true,
+        "llm_receives_file_contents": false,
+        "host_capability": "csv-summary",
+        "input_mode": "file",
+        "output_mode": "report",
+        "supported_extensions": [
+          "csv",
+          "tsv",
+          "txt"
+        ]
+      },
+      "fields": []
+    }
   }
 ]
