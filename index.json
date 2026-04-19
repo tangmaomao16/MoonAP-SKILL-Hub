@@ -93,5 +93,19 @@
         }
       ]
     }
+  },
+  {
+    "id": "bioinformatics.sequencing.large-fastq-analyzer",
+    "name": "large-fastq-analyzer",
+    "description": "Analyze large FastQ files with browser-local chunked streaming and report read/base metrics.",
+    "version": "0.1.0",
+    "domain": "bioinformatics",
+    "subdomain": "sequencing",
+    "category": "sequencing",
+    "task_kind": "large-fastq-analysis",
+    "runtime_mode": "file",
+    "result_mode": "report",
+    "folder_path": "bioinformatics/sequencing/large-fastq-analyzer",
+    "zip_path": "bioinformatics/sequencing/large-fastq-analyzer.zip"
   }
 ]
