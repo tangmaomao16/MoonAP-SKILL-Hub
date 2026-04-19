@@ -8,5 +8,90 @@
     "subdomain": "sequencing",
     "folder_path": "bioinformatics/sequencing/fastq-generator",
     "zip_path": "bioinformatics/sequencing/fastq-generator.zip"
+  },
+  {
+    "id": "bioinformatics.sequencing.large-fastq-generator",
+    "name": "Large FastQ Generator",
+    "description": "Generate large browser-local FastQ files with streamed local writing instead of buffering the whole artifact in memory.",
+    "version": "0.1.0",
+    "domain": "bioinformatics",
+    "subdomain": "sequencing",
+    "task_kind": "large-file-generation",
+    "runtime_mode": "form",
+    "result_mode": "download",
+    "folder_path": "bioinformatics/sequencing/large-fastq-generator",
+    "zip_path": "bioinformatics/sequencing/large-fastq-generator.zip",
+    "runtime_spec": {
+      "mode": "form",
+      "title": "Generate large browser-local file",
+      "primary_action_label": "Generate with streaming writer",
+      "rerun_action_label": "Generate with streaming writer again",
+      "io_contract": {
+        "protocol": "moonap.large-file.v1",
+        "browser_local_only": true,
+        "llm_receives_file_contents": false,
+        "host_capability": "streamed-local-generation",
+        "input_mode": "none",
+        "output_mode": "browser-local-save-stream",
+        "chunk_size_bytes": 4194304,
+        "save_picker_required": true
+      },
+      "fields": [
+        {
+          "name": "output_name",
+          "label": "Output FastQ file name",
+          "type": "text",
+          "default": "moonap-output.fastq"
+        },
+        {
+          "name": "target_size_mb",
+          "label": "Target size (MB)",
+          "type": "int",
+          "default": 128,
+          "min": 1,
+          "max": 1024,
+          "step": 1
+        },
+        {
+          "name": "read_length",
+          "label": "Read length",
+          "type": "int",
+          "default": 150,
+          "min": 20,
+          "max": 20000,
+          "step": 1
+        },
+        {
+          "name": "read_header_prefix",
+          "label": "Read header prefix",
+          "type": "text",
+          "default": "moonap_read"
+        },
+        {
+          "name": "random_seed",
+          "label": "Random seed",
+          "type": "int",
+          "default": 42,
+          "min": 0,
+          "max": 2147483647,
+          "step": 1
+        },
+        {
+          "name": "n_rate",
+          "label": "N base rate",
+          "type": "float",
+          "default": 0.01,
+          "min": 0,
+          "max": 1,
+          "step": 0.001
+        },
+        {
+          "name": "quality_char",
+          "label": "Quality character",
+          "type": "text",
+          "default": "I"
+        }
+      ]
+    }
   }
 ]
